@@ -8,7 +8,7 @@ MODULE_DESCRIPTION("My kernel module");
 MODULE_AUTHOR("Jacques");
 MODULE_LICENSE("GPL");
 
-static int init_module(void)
+static int dummy_init(void)
 {
     // printk(KERN_INFO "Hi");
     pr_info("Hello\n");
@@ -17,11 +17,11 @@ static int init_module(void)
     return 0;
 }
 
-static void cleanup_module(void)
+static void dummy_cleanup(void)
 {
     // printk(KERN_INFO "Bye");
     pr_info("Goodbye\n");
 }
 
-module_init(init_module);
-module_exit(cleanup_module);
+module_init(dummy_init);
+module_exit(dummy_cleanup);
