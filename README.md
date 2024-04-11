@@ -3,7 +3,7 @@ follow the sun
 
 ```bash
 dmesg --follow
-sudo insmod modul.ko
-lsmod | grep modul
-sudo rmmod modul.ko
+sudo insmod module.ko
+lsmod | grep module
+sudo rmmod module.ko
 ```
