@@ -1,6 +1,4 @@
-#include <linux/kernel.h>
-#include <linux/init.h>
-
+#include <linux/init.h> /* Needed for the macros */
 #include <linux/module.h> /* Needed by all modules */
 #include <linux/printk.h> /* Needed for pr_info() */
 
@@ -10,7 +8,6 @@ MODULE_LICENSE("GPL");
 
 static int dummy_init(void)
 {
-    // printk(KERN_INFO "Hi");
     pr_info("Hello\n");
 
     /* A non 0 return means init_module failed; module can't be loaded. */
@@ -19,7 +16,6 @@ static int dummy_init(void)
 
 static void dummy_cleanup(void)
 {
-    // printk(KERN_INFO "Bye");
     pr_info("Goodbye\n");
 }
 
