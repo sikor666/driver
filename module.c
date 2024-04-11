@@ -6,15 +6,17 @@ MODULE_DESCRIPTION("My kernel module");
 MODULE_AUTHOR("Jacques");
 MODULE_LICENSE("GPL");
 
-static int dummy_init(void)
+static int dummy_data __initdata = 3;
+
+static int __init dummy_init(void)
 {
-    pr_info("Hello\n");
+    pr_info("Hello %d\n", dummy_data);
 
     /* A non 0 return means init_module failed; module can't be loaded. */
     return 0;
 }
 
-static void dummy_cleanup(void)
+static void __exit dummy_cleanup(void)
 {
     pr_info("Goodbye\n");
 }
