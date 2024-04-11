@@ -2,6 +2,7 @@ EXTRA_CFLAGS = -Wall -g
 
 obj-m += module.o
 obj-m += chardev.o
+obj-m += procfs1.o
 
 PWD := $(CURDIR) 
 
